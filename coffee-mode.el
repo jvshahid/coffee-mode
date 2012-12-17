@@ -606,13 +606,7 @@ output in a compilation buffer."
 
     ;; We need to insert an additional tab because the last line was special.
     (when (coffee-line-wants-indent)
-      (insert-tab)))
-
-  ;; Last line was a comment so this one should probably be,
-  ;; too. Makes it easy to write multi-line comments (like the one I'm
-  ;; writing right now).
-  (when (coffee-previous-line-is-comment)
-    (insert "# ")))
+      (insert-tab))))
 
 (defun coffee-dedent-line-backspace (arg)
   "Unindent to increment of `coffee-tab-width' with ARG==1 when
